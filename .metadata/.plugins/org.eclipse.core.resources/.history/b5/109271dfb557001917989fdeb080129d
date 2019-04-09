@@ -1,0 +1,31 @@
+package com.fr.adaming.Domain;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+
+
+
+@ManagedBean
+@ViewScoped
+public class BeanPays implements Serializable {
+
+	
+	ArrayList<Pays> listHotel = new ArrayList<Pays>();
+	
+	@PostConstruct
+	public void init() {
+		listHotel.add(new Pays("France", "descripF"));
+		listHotel.add(new Hotel("Belle Vue ***", "France", "Lannion", 60,
+				false, true, true));
+		listHotel.add(new Hotel("Belle Vue ***", "France", "Lannion", 60,
+				false, true, true));
+		listHotel.add(new Hotel("Belle Vue ***", "France", "Lannion", 60,
+				false, true, true));
+		listHotel.add(new Hotel("Belle Vue ***", "France", "Lannion", 60,
+				false, true, true));
+	}
+}

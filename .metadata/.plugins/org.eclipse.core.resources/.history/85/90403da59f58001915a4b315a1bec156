@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Booking second step</title>
+	<style type="text/css">
+.ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default
+	{
+	align: center
+}
+
+legend {
+	display: block;
+	padding-inline-start: 10px;
+	padding-inline-end: 2px;
+}
+</style>
+</h:head>
+<body>
+	<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+		<ui:define name="content">
+			<script type="text/javascript">
+				PrimeFaces.locales['de'] = {
+					closeText : 'Schließen',
+					prevText : 'Zurück',
+					nextText : 'Weiter',
+					monthNames : [ 'Januar', 'Februar', 'März', 'April', 'Mai',
+							'Juni', 'Juli', 'August', 'September', 'Oktober',
+							'November', 'Dezember' ],
+					monthNamesShort : [ 'Jan', 'Feb', 'März', 'Apr', 'Mai',
+							'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez' ],
+					dayNames : [ 'Sonntag', 'Montag', 'Dienstag', 'Mittwoch',
+							'Donnerstag', 'Freitag', 'Samstag' ],
+					dayNamesShort : [ 'Son', 'Mon', 'Die', 'Mit', 'Don', 'Fre',
+							'Sam' ],
+					dayNamesMin : [ 'S', 'M', 'D', 'M ', 'D', 'F ', 'S' ],
+					weekHeader : 'Woche',
+					FirstDay : 1,
+					isRTL : false,
+					showMonthAfterYear : false,
+					yearSuffix : '',
+					timeOnlyTitle : 'Nur Zeit',
+					timeText : 'Zeit',
+					hourText : 'Stunde',
+					minuteText : 'Minute',
+					secondText : 'Sekunde',
+					currentText : 'Aktuelles Datum',
+					ampm : false,
+					month : 'Monat',
+					week : 'Woche',
+					day : 'Tag',
+					allDayText : 'Ganzer Tag'
+				};
+			</script>
+			<div
+				style="text-align: center; border-right-color: black; border-right-style: ridge; border-left-color: black; border-left-style: ridge; border-left-width: 2px; border-right-width: 2px; background-color: white; margin-right: 25%; margin-left: 25%; height: 550px;">
+				<h:form id="form" style="margin-left:20%">
+					<br />
+					<br />
+					<br />
+					<br />
+					<p style="font-size: 30px">Choisissez vos dates de voyage</p>
+					<p:growl id="msgs" showDetail="true" />
+
+					<h:panelGrid columns="2" cellpadding="5" >
+
+						<p:outputLabel for="aller" value="Date d'aller" />
+						<p:datePicker id="aller" navigator="true"
+							value="#{calendarView.dateAller}"
+							readonlyInput="true"
+							mindate="#{calendarView.todayDate()}" />
+
+						<h:outputText value="" />
+						<p:commandButton value="Sélectionner cet aller"
+							update=":form:retour" 
+							icon="pi pi-check" actionListener="#{calendarView.todayDate()}"/>
+
+
+
+						<p:outputLabel for="retour" value="Date de retour" />
+						<p:datePicker id="retour" navigator="true"
+							value="#{calendarView.date6}" mindate="#{calendarView.dateAllerFormat()}" />						
+
+						<h:outputText value="" />
+						<p:commandButton value="Sélectionner ces dates"
+							oncomplete="PF('dlg2').show()" update="msgs  retour" icon="pi pi-check" />
+					
+					</h:panelGrid>
+
+					<p:dialog id="dlg2" header="Les dates ont été enregistrées"
+						widgetVar="dlg2" minHeight="40">
+						<h:outputText
+							value="Cliquez sur le bouton ci-dessous pour revenir à l'accueil" />
+						<p:commandButton value="Sélectionner ces dates"
+							oncomplete="PF('dlg2').show()" update="msgs  retour"
+							action="#{index.xhtml}" icon="pi pi-check" />
+					</p:dialog>
+
+
+
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

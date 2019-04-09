@@ -1,0 +1,19 @@
+package com.fr.adaming.Domain;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+
+
+
+@ManagedBean
+@ViewScoped
+public class BeanPays implements Serializable {
+
+	
+	ArrayList<Pays> listHotel = new ArrayList<Pays>();
+	
+	
+}

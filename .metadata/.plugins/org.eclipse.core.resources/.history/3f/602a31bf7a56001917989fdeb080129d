@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+
+<style type="text/css">
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {background:white; align:center}
+   legend {
+    display: block;
+    padding-inline-start:10px;
+    padding-inline-end: 2px;}
+</style>
+
+
+
+	<title>Test</title>
+</h:head>
+<h:body>
+
+   <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+	
+
+
+<h:form id="paysForm">
+	
+		<h:panelGrid columns="2" cellpadding="5" >
+
+			<p:fieldset legend="Choisir le pays" toggleable="true"
+				toggleSpeed="500"
+				style="border:dotted;border-color:#FF00FF; background-color:#87CEFA">
+	<p:ajax event="toggle" />
+
+				<h:selectOneMenu value="#{decisionBean2.data}"> <!--  Userdata = nompays selectionné ... -->
+					 <f:selectItem itemValue = "France" itemLabel = "France" /> 
+            <f:selectItem itemValue = "Polynésie française" itemLabel = "Polynésie française" /> 
+            <f:selectItem itemValue = "Espagne" itemLabel = "Espagne" /> 
+            <f:selectItem itemValue = "Chine" itemLabel = "Chine" /> 
+            <f:selectItem itemValue = "Autriche" itemLabel = "Autriche" />     
+				</h:selectOneMenu>
+			<p:commandButton value="Choisir ce pays" update=":paysForm:dlg2 :hotelForm" oncomplete="PF('dlg2').show()" actionListener="#{decisionBean.showHotel}"  /> 
+   
+			</p:fieldset>	
+	</h:panelGrid>
+	
+	<!--  Le popup qui affiche la description du pays sélectionné +  photo(s)--> 
+<p:dialog id="dlg2" header="#{decisionBean.data}" widgetVar="dlg2" minHeight="40">
+    <h:outputText value="#{decisionBean.data} " />
+</p:dialog>
+				  			
+	</h:form>			  			
+				  			
+    <p:fieldset legend="Choisir l'hotel" value="Hotel "  style=" background-color:#87CEFA"> 
+        <h:panelGrid columns="2" cellpadding="5">
+        
+        
+      
+        <h:form id="hotelForm">
+       <!--     <h:outputText value="#{decisionBean.data} " />
+        
+        La nouvelle liste avec les hotels sélectionnés s'appelle result 
+        Elle est au format result.add(new Hotel("Camping Adriano **","Espagne","Getxo",30.2,false,true,true));
+                  
+			a faire : Rendre selectionnables les hotels... + pê l.76 + l.79 
+      
+      
+       <h:dataTable value="#{DecisionBean.result}" var="h"
+		styleClass="Hotel-table" headerClass="Hotel-table-header"
+		rowClasses="Hotel-table-odd-row,Hotel-table-even-row">
+
+		<h:column>
+		
+			<f:facet name="header">
+				<h:outputLabel value="Hotel" />
+				<h:outputText value="#{h.nom}" />
+			</f:facet>
+			  Peut-être rajouter une photo par hotel : <h:outputText value="#{c.photo}" ?? />
+			<h:outputText value="#{h.city}" />
+			<h:outputText value="#{h.price}" />
+			 Ci-dessous remplacer par les logos OK / KO 
+			<h:outputText value="#{h.pool}" />
+			<h:outputText value="#{h.animal}" />
+			<h:outputText value="#{h.wifi}" />
+		</h:column>
+		</h:dataTable>
+		
+					<p:commandButton value="Choisir cet hotel" type="button" onclick="PF('dlg3').show();"  /> 
+		
+
+
+			<p:dialog header="Confirmation" widgetVar="dlg3" minHeight="40">
+    <p >Vous avez choisi l'hotel   #{c.nom} à  #{c.city}. Confirmez-vous ?  </p>
+    <p:commandButton value="Confirmer" type="button" onclick="dates.xhtml"  /> 
+</p:dialog>
+			
+Ci dessous c'était en utilisant la classe hotel 
+				<h:dataTable value="#{hotelService.hotelList}" var="c">
+					<h:column>
+						<f:facet name="#{hotel.nomHotel}">
+						</f:facet>
+						<h:outputText value="#{hotel.city}" />
+						<h:outputText value="#{hotel.price}" />
+
+
+						<h:outputText value="#{hotel.animal}" />
+						<h:outputText value="#{hotel.pool}" />
+						<h:outputText value="#{hotel.wifi}" />
+					</h:column>
+				</h:dataTable>-->
+				
+			</h:form>
+		</h:panelGrid>
+	</p:fieldset>
+	</ui:define>
+    </ui:composition>
+
+</h:body>
+</html>

@@ -1,0 +1,195 @@
+package com.fr.adaming.Domain;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
+
+
+
+@ManagedBean
+@ViewScoped
+public class BeanHotel implements Serializable {
+
+	/**
+		 * 
+		 */
+	private static final long serialVersionUID = 1L;
+
+	public String nomPays;
+	public Hotel selectedHotel;
+
+	ArrayList<Hotel> listHotel = new ArrayList<Hotel>();
+
+	@PostConstruct
+	public void init() {
+
+		listHotel.add(new Hotel("Belle Vue ***", "France", "Lannion", 60,
+				false, true, true));
+		listHotel.add(new Hotel("Hotel des Bains **", "France", "La Ciotat",
+				59.99, false, true, true));
+		listHotel.add(new Hotel("Camping des Pins ***", "France", "Trebeurden",
+				25, false, true, true));
+		listHotel.add(new Hotel("Le Victoria ***", "France", "Cassis", 72.50,
+				false, true, true));
+		listHotel.add(new Hotel("Le Golden Oak ****", "France", "Aubagne", 80,
+				true, false, true));
+		listHotel.add(new Hotel("Grand Hotel du parc ***", "France",
+				"Marseille", 75.50, false, false, true));
+		listHotel.add(new Hotel("Le Graziela ***", "France", "Doizieux", 38,
+				false, true, true));
+		listHotel.add(new Hotel("Le Longchamp ****", "France", "Biscarosse",
+				45, false, false, true));
+		listHotel.add(new Hotel("Hotel de l'Océan ***", "France", "Martigues",
+				28, false, true, true));
+		listHotel.add(new Hotel("Camping Les vagues ***", "France", "Bayonne",
+				22, true, true, true));
+		listHotel.add(new Hotel("Les flots bleus ***", "Tahiti", "To'ahotu",
+				45, false, true, true));
+		listHotel.add(new Hotel("Camping des cocotiers ***", "Tahiti",
+				"Mahina", 35, true, true, true));
+		listHotel.add(new Hotel("Village des cabanons ****", "Tahiti",
+				"Mahina", 75.5, true, true, true));
+		listHotel.add(new Hotel("Camping Chez Lou **", "Tahiti", "Mahaena", 30,
+				false, true, false));
+		listHotel.add(new Hotel("Le Marina ****", "Tahiti", "Mahina", 89.90,
+				true, true, true));
+		listHotel.add(new Hotel("Club Mediterranée***", "Tahiti", "Papeete",
+				50, true, true, true));
+		listHotel.add(new Hotel("Tetiaroa****", "Tahiti", "Faaone", 80, true,
+				true, true));
+		listHotel.add(new Hotel("L'Hibiscus***", "Tahiti", "Papeete", 48.90,
+				false, true, true));
+		listHotel.add(new Hotel("Camping les tiarés***", "Tahiti", "Papeete",
+				37.90, true, true, true));
+		listHotel.add(new Hotel("Manava***", "Tahiti", "Mahaena", 53.2, false,
+				true, true));
+		listHotel.add(new Hotel("Tianzi ***", "Chine", "Shangai", 80.2, false,
+				true, true));
+		listHotel.add(new Hotel("Love Hotel ****", "Chine", "Shangai", 90.5,
+				true, true, true));
+		listHotel.add(new Hotel("Batman ***", "Chine", "Taiwan", 110, false,
+				true, true));
+		listHotel.add(new Hotel("Royal View ****", "Chine", "Taizhou", 85,
+				true, true, true));
+		listHotel.add(new Hotel("L'empereur **", "Chine", "Taizhou", 60, false,
+				true, true));
+		listHotel.add(new Hotel("Village vacances ***", "Chine", "Taiwan", 70,
+				false, true, true));
+		listHotel.add(new Hotel("Le Shenzen ***", "Chine", "Hong-Kong", 55.5,
+				false, true, true));
+		listHotel.add(new Hotel("Bonham Hotel ***", "Chine", "Hong-Kong", 66,
+				false, true, true));
+		listHotel.add(new Hotel("Shasha de jiao **", "Chine", "Hong-Kong",
+				55, false, true, true));
+		listHotel.add(new Hotel("Losa longia ***", "Chine", "Hong-Kong",
+				65.9, false, true, true));
+		listHotel.add(new Hotel("Kényelmes otthon ***", "Autriche",
+				"Thumersbach", 75, false, true, true));
+		listHotel.add(new Hotel("Fenyak ***", "Autriche",
+				"Oggau am Neusiedler See", 70, false, true, true));
+		listHotel.add(new Hotel("Le Rissman ****", "Autriche",
+				"Oggau am Neusiedler See", 85.50, false, true, true));
+		listHotel.add(new Hotel("Fahaz ***", "Autriche", "Salzbourg", 55,
+				true, true, true));
+		listHotel.add(new Hotel("A Homan ****", "Autriche", "Salzbourg", 89.9,
+				true, true, true));
+		listHotel.add(new Hotel("A Wagner ****", "Autriche", "Salzbourg", 90.5,
+				true, true, true));
+		listHotel.add(new Hotel("Camping des Sapins ***", "Autriche", "Vienne",
+				55, false, true, true));
+		listHotel.add(new Hotel("Camping Zell am See **", "Autriche",
+				"Zell am See", 53.2, true, true, true));
+		listHotel.add(new Hotel("St Georg***", "Autriche", "Thumersbach", 65,
+				false, true, true));
+		listHotel.add(new Hotel("Sevilla****", "Autriche", "Vienne", 80,
+				false, true, true));
+		listHotel.add(new Hotel("L'Aguirre ****", "Espagne", "Bilbao", 75,
+				true, true, true));
+		listHotel.add(new Hotel("En Alcaraz ***", "Espagne", "Bilbao", 62,
+				true, false, true));
+		listHotel.add(new Hotel("La Casa di Mama ***", "Espagne", "Getxo",
+				55.50, false, true, true));
+		listHotel.add(new Hotel("Camping Granada ***", "Espagne", "Torrent",
+				45, true, true, true));
+		listHotel.add(new Hotel("Palatio de Ines ****", "Espagne", "Torrent",
+				53.2, true, true, true));
+		listHotel.add(new Hotel("Torre del Toro **", "Espagne",
+				"Port de Sagunt", 42.5, false, true, true));
+		listHotel.add(new Hotel("Aparto di Jardines ***", "Espagne", "Cullera",
+				58, true, true, true));
+		listHotel.add(new Hotel("Bahia di Maria ***", "Espagne", "Monte Faro",
+				53.2, false, true, true));
+		listHotel.add(new Hotel("Madison", "Espagne", "Almeria ****", 72.50,
+				true, true, true));
+		listHotel.add(new Hotel("Camping Adriano **", "Espagne", "Getxo", 30.2,
+				false, true, true));
+
+	}
+
+	public String getNomPays() {
+		return nomPays;
+	}
+
+
+	public void setNomPays(String nomPays) {
+		this.nomPays = nomPays;
+	}
+	
+	public Hotel getSelectedHotel() {
+		return selectedHotel;
+	}
+
+	public void setSelectedHotel(Hotel selectedHotel) {
+		this.selectedHotel = selectedHotel;
+	}
+
+	
+	
+	public ArrayList<Hotel> getListHotel() {
+		return listHotel;
+	}
+
+	public void setListHotel(ArrayList<Hotel> listHotel) {
+		this.listHotel = listHotel;
+	}
+
+	public void showHotel(){
+		System.out.println("activé");
+	
+	}
+	
+	List<Hotel> viewHotel = new ArrayList<Hotel>();
+
+	public List<Hotel> displayHotel() {
+		for (Hotel hotel : listHotel) {
+			if ((hotel.getPays()).equals(nomPays)) {
+			viewHotel.add(hotel);
+			}
+		}
+		return viewHotel;
+	}
+
+	public List<Hotel> getViewHotel() {
+		return viewHotel;
+	}
+
+	public void setViewHotel(List<Hotel> viewHotel) {
+		this.viewHotel = viewHotel;
+	}
+	
+	public String descriptionPays(String pays) {
+		String desc;
+		switch (pays){
+		case "France" : 
+			desc = "descriptionFrance";
+		}
+	}
+
+	
+}

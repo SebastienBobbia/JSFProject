@@ -1,0 +1,59 @@
+package com.fr.adaming.Domain;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+
+@ManagedBean
+
+public class BeanPays implements Serializable {
+
+	public Pays pays;
+	ArrayList<Pays> listPays = new ArrayList<Pays>();
+
+	@PostConstruct
+	public void init() {
+	
+		listPays = service.getThemes();
+	}
+
+	public ArrayList<Pays> getListPays() {
+		return listPays;
+	}
+
+	public void setListPays(ArrayList<Pays> listPays) {
+		this.listPays = listPays;
+	}
+
+	public String nom;
+	public String description;
+
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Pays getPays() {
+		return pays;
+	}
+
+	public void setPays(Pays pays) {
+		this.pays = pays;
+	}	
+
+}

@@ -1,0 +1,114 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	 xmlns:p="http://primefaces.org/ui">
+ 
+<h:head>
+<style type="text/css">
+    .ui-sticky0 {
+        top: 0px !important;
+         bottom: 200px ;
+    }
+    
+    }
+</style>
+
+<style type="text/css">
+     @media () {.ui-sticky1 {
+        top: 0px !important;
+    }
+    @media () {
+        .ui-sticky1 {
+            top: 0px !important;
+        }
+    }
+
+    .ui-sticky2 {
+        top: 0px !important;
+    }
+    @media (max-width: 400px) {
+        .ui-sticky2 {
+            top: 110px !important;
+        }
+       
+    
+    </style>
+    
+</h:head>
+
+<body>
+   <ui:composition id="menu" template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+	
+<div class="ui-sticky0" style="height:80"  >
+<p:toolbar id="tb" align="right" style="text-align:center ;position: fixed;border:none;width:1500px; bottom: 300px; top:700px;height:170px;width: 800px;background-color: white;"> 
+    <f:facet name="right">
+      <br/>  Un barbecue sur un volcan, traverser la France à bord d'un TER à l'heure, un mois de Trekking dans les régions les plus 
+tranquilles du monde, 
+<br/>Cela vous tente ? 
+  <a  href="/AgenceVoyages/booking.xhtml" > <br/>Réservez dès à présent la formule de vos rêves !</a>
+   
+    </f:facet></p:toolbar> </div>    
+ <div class="bg" style="  background-color: white;">
+ 
+ <div >
+<img src="quisommesnous1.jpg" align="left" style="margin-top:200px;height:500px; width:800px"/>
+ </div> 
+ <div class="ui-sticky1" style="height:80"  >
+<p:toolbar id="tb2"  style="text-align:center;position: fixed;top: 200px;z-index: 1002;width:800px; height:100px;background-color: white; border:none"> 
+    <f:facet name="right">
+       <p style="font-size:30"> 
+Mélina et Sébastien</p> 
+<p style="font-size:20">baroudeurs dans l'âme et compagnons d'excursions, ont créé cette agence de voyages en 2019 afin de répondre au mieux
+à toutes vos envies d'évasion.</p>
+    
+    </f:facet>
+   
+</p:toolbar>
+ </div>
+
+ 
+ <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
+ <p align="center" style="font-family: georgia; font-size:40px; font-style: italic"> "Nous sommes ravis de partager avec vous </p> 
+ <p align="center" style="font-family: georgia;font-size:40px;font-weight: bold; font-style: italic; font-size:50"> nos bons plans </p>
+ <p align="center" style="font-family: georgia;font-size:40px;font-style: italic; font-size:50">pour </p>
+  <a  href="/AgenceVoyages/booking.xhtml" >
+  <p align="center" style="font-family: georgia;font-size:40px;font-weight: bold; font-style: italic; font-size:50">organiser vos plus beaux voyages." </p></a>
+<div align="center">  <img src="logo0.jpg" align="right" style="height:300px; width:400px"/></div>
+ <br/><br/> <br/><br/> <br/>  <br/>
+
+ <div >  <br/><br/> <br/>  
+   <div align="left"> <img src="promo.jpg" align="left" style="height:450px; width:800px"/> </div> </div>
+  <div align="right"> <img src="quisommesnous0.jpg" align="right" style="height:450px; width:800px"/>
+
+
+ 
+<p:sticky target="tb" />
+<p:sticky target="tb0" />
+
+</div>
+
+<div  >
+<p:toolbar id="tb0"   style="float:right; border:none;text-align:center; position: fixed;width:700px; top:1000px;z-index: 1002;height:700px;background-color: white; padding:10px"> 
+ 
+   
+</p:toolbar>
+
+ <img src="quisommesnous2.jpg" align="left" style="height:500px"/>
+ 
+ <a  href="/AgenceVoyages/booking.xhtml" >
+<img  class="image2"  style="height:400px; width:600px; margin-left:200px" src="ombre.jpg" alt="C'est parti !"/>
+</a>
+
+
+
+ 
+
+</div>
+	</div>	
+	
+</ui:define></ui:composition>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+package com.fr.adaming.veiw;
+
+public class CalendarView {
+
+	<p:outputLabel for="disabledDD" value="Disabled Date/Day:" />
+    <p:datePicker id="disabledDD" value="#{calendarView.date6}" disabledDays="#{calendarView.invalidDays}" disabledDates="#{calendarView.invalidDates}" readonlyInput="true" />
+}

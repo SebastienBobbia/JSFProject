@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+ 
+<body>
+
+<div id="header" style="margin-left:15%;margin-right:15%">
+   <ui:include src="/WEB-INF/templates/header.xhtml">
+        <ui:param name="headtitle" value="This is the header title." />
+   </ui:include>
+</div>
+
+<div id="content">
+	<ui:insert name="content"></ui:insert>
+</div>
+
+<div id="footer">
+  <ui:insert name="footer">
+        <ui:include src="/WEB-INF/templates/footer.xhtml"></ui:include>
+  </ui:insert>
+</div>
+
+</body>
+</html>

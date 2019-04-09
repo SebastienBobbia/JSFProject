@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+    <ui:composition >
+      <div style="width: 100%; font-size: 15px; line-height: 48px  ; color: #754848;font-variant: small-caps;
+   "/>
+  <h3>Agence de voyages</h3> <br/>
+  <h:panelGrid columns="2" cellpadding="5">
+  <p:outputText value="Raison Social" />
+  <p:outputText value="Super Agence" />
+   <p:outputText value="Adresse" />
+  <p:outputText value="32 rue des Hérideaux" />
+   <p:outputText value="Téléphone" />
+  <p:outputText value="06 34 22 22 44" />
+   <p:outputText value="E-mail" />
+  <p:outputText value="superagence@gmail.com" />
+</h:panelGrid>
+   Super Agence<br/>
+   69000 Lyon<br/>
+   01 02 03 04 05<br/>
+          <a  style="width: 100%; font-size: 20px;  color: #754848;font-variant: small-caps;
+    font-family: didot;" href="contact.xhtml" >Contactez-nous</a>
+    </ui:composition>
+</body>
+</html>
