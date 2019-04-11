@@ -1,0 +1,5 @@
+javax.faces.validator.LongRangeValidator.MAXIMUM={1}: Le nombre de caractères rentrés est supérieure au maximum de ''{0}''
+javax.faces.validator.LongRangeValidator.MINIMUM={1}: Le nombre de caractères rentrés est inférieure au minimum de ''{0}''
+javax.faces.validator.LengthValidator.MAXIMUM={1}: Le nombre de caractères rentrés est supérieure au maximum de ''{0}''
+javax.faces.validator.LengthValidator.MINIMUM={1}: Le nombre de caractères rentrés est inférieure au minimum de ''{0}''
+javax.faces.component.UIInput.REQUIRED={0}: Les champs e-mail et/ou message ne sont pas remplis !

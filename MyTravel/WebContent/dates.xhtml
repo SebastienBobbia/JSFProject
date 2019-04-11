@@ -75,20 +75,20 @@ legend {
 
 						<p:outputLabel for="aller" value="Date d'aller" />
 						<p:datePicker id="aller" navigator="true"
-							value="#{calendarView.dateAller}"
+							value="#{userBean.dateAller}"
 							readonlyInput="true"
-							mindate="#{calendarView.todayDate()}" />
+							mindate="#{userBean.todayDate()}" />
 
 						<h:outputText value="" />
 						<p:commandButton value="Sélectionner cet aller"
 							update=":form:retour" 
-							icon="pi pi-check" actionListener="#{calendarView.todayDate()}"/>
+							icon="pi pi-check" actionListener="#{userBean.todayDate()}"/>
 
 
 
 						<p:outputLabel for="retour" value="Date de retour" />
 						<p:datePicker id="retour" navigator="true"
-							value="#{calendarView.date6}" mindate="#{calendarView.dateAllerFormat()}" />						
+							value="#{userBean.date6}" mindate="#{userBean.dateAllerFormat()}" />						
 
 						<h:outputText value="" />
 						<p:commandButton value="Sélectionner ces dates"

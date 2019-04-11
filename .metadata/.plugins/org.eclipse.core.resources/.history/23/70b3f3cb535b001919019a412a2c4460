@@ -1,0 +1,127 @@
+package com.fr.adaming.Domain;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.view.ViewScoped;
+
+import com.fr.adaming.service.HotelService;
+
+@ManagedBean
+@ViewScoped
+public class BeanHotel implements Serializable {
+
+	/**
+		 * 
+		 */
+	private static final long serialVersionUID = 1L;
+
+	public String nomPays;
+	public Hotel selectedHotel;
+	
+	@ManagedProperty("#{hotelService}")
+    public HotelService service;
+
+	ArrayList<Hotel> listHotel = new ArrayList<Hotel>();
+	
+	@PostConstruct
+	public void init() {
+	
+		listHotel = service.getListHotel();
+	}
+
+	public String getNomPays() {
+		return nomPays;
+	}
+
+	public void setNomPays(String nomPays) {
+		this.nomPays = nomPays;
+	}
+
+	public Hotel getSelectedHotel() {
+		return selectedHotel;
+	}
+
+	public void setSelectedHotel(Hotel selectedHotel) {
+		this.selectedHotel = selectedHotel;
+	}
+
+	public ArrayList<Hotel> getListHotel() {
+		return listHotel;
+	}
+
+	public void setListHotel(ArrayList<Hotel> listHotel) {
+		this.listHotel = listHotel;
+	}
+
+	public void showHotel() {
+		System.out.println("activé");
+
+	}
+
+	List<Hotel> viewHotel = new ArrayList<Hotel>();
+
+	public List<Hotel> displayHotel() {
+		for (Hotel hotel : listHotel) {
+			if ((hotel.getPays()).equals(nomPays)) {
+				viewHotel.add(hotel);
+			}
+		}
+		return viewHotel;
+	}
+
+	public List<Hotel> getViewHotel() {
+		return viewHotel;
+	}
+
+	public void setViewHotel(List<Hotel> viewHotel) {
+		this.viewHotel = viewHotel;
+	}
+
+	public void activated() {
+		System.out.println("reached");
+	}
+
+	public HotelService getService() {
+		return service;
+	}
+
+	public void setService(HotelService service) {
+		this.service = service;
+	}
+	
+	//Animaux
+		List<Hotel> result2 = new ArrayList<Hotel>();
+		String logoAnimal = "";
+		public String animaux() {
+			for (Hotel hotel : listHotel) 	{		
+			if (hotel.isAnimal()==true)  {
+			String logoAnimal = "http://localhost:8080/MyTravel/animalOK.jpg";} //Si animaux acceptés, afficher logo animalOK
+			else { String logoAnimal = "http://localhost:8080/MyTravel/animalKO.jpg";} //Sinon afficher logo animalKO
+		    }
+		return logoAnimal;}
+			
+	// Pareil pour piscine 
+			List<Hotel> result3 = new ArrayList<Hotel>();
+			String logoPool = " ";
+			public String pool() {
+				for (Hotel hotel : listHotel) 	{		
+				if (hotel.isPool()==true)  {
+				String logoPool = "lhttp://localhost:8080/MyTravel/poolOK.jpg";}
+				else { String logoPool = "http://localhost:8080/MyTravel/poolKO.jpg";} }
+			return logoPool;}
+			
+	//Pareil pour wifi
+			List<Hotel> result4 = new ArrayList<Hotel>();
+			String logoWIfi = " ";
+			public String wifi() {
+				for (Hotel hotel : listHotel) 	{		
+				if (hotel.isWifi()==true)  {
+				String logoWifi = "lhttp://localhost:8080/MyTravel/wifiOK.jpg";}
+				else { String logoWifi = "http://localhost:8080/MyTravel/wifiKO.jpg";} }
+			return logoPool;}
+}

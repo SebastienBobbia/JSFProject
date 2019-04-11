@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <faces-config version="2.2" xmlns="http//xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http//www.w3.org/2001/XMLSchema-instance"
+	xsi:schemalocation="http://xmlns.jcp.org/xml/ns/javaee
+	http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+	
+<navigation-rule>
+	<display-name>Contact</display-name>
+	<from-view-id>/contact.xhtml</from-view-id>
+	
+</navigation-rule>	
+	
+	<application>
+	<message-bundle>ValidationMessages</message-bundle>
+</application>
+
+<validator>
+	<validator-id>MyValidatorBean</validator-id>
+	<validator-class>com.fr.adaming.view.ValidatorBean</validator-class>
+</validator>
+
+</faces-config>

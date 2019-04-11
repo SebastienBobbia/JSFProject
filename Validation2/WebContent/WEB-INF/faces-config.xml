@@ -1,0 +1,28 @@
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+	http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+
+	<navigation-rule>
+		<display-name>Hello Page</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success1.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>echec</from-outcome>
+			<to-view-id>/echec1.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<application>
+		<message-bundle>ValidationMessages</message-bundle>
+	</application>
+	<validator>
+		<validator-id>MyValidatorBean</validator-id>
+		<validator-class>com.formation.bean.ValidatorBean</validator-class>
+	</validator>
+
+
+</faces-config>

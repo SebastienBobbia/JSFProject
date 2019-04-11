@@ -8,7 +8,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Shared Ressources/javax.faces.jar"/>
-	<classpathentry kind="lib" path="C:/Shared Ressources/primefaces-7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Shared Ressources/PrimeFaces/primefaces-7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Shared Ressources/Lib JSF/javax.faces.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

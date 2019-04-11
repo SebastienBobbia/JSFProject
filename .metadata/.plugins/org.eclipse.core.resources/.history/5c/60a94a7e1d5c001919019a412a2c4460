@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Message envoyé</title>
+</h:head>
+<h:body>
+
+	<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+		<ui:define name="content">
+
+<br /> <br />
+			<div
+				style="text-align: center; border-right-color: black; border-right-style: ridge; border-left-color: black; border-left-style: ridge; border-left-width: 2px; border-right-width: 2px; background-color: white; margin-right: 25%; margin-left: 25%; height: 550px;">
+				<br /> <br />
+				<p style="font-size: 30px; text-align: center">Votre message a bien été envoyé,</p>
+
+				<br /> <p style="font-size: 30px; text-align: center">nous allons le traiter dans les meilleurs délais.</p><br />
+
+
+
+				
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

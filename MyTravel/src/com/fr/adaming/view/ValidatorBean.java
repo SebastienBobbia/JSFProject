@@ -24,8 +24,8 @@ public class ValidatorBean implements Validator
         if (!matcher.matches()) {
             FacesMessage message = new FacesMessage();
             message.setDetail("Please enter a valid email");
-            message.setSummary("Il semblerait que votre e-mail n'est pas au bon format");
-            message.setSeverity(FacesMessage.SEVERITY_WARN);
+            message.setSummary("Il semblerait que votre e-mail ne soit pas au bon format");
+            message.setSeverity(FacesMessage.SEVERITY_ERROR);
             throw new ValidatorException(message);
         }
     }

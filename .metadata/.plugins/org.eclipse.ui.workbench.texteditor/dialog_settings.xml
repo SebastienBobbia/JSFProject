@@ -2,22 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="MyTravel" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="MyTravel"/>
+			<item value="Web"/>
+			<item value="MyTravel/"/>
+			<item value="result2"/>
 			<item value="AgenceVoyages"/>
+			<item value="MyTravel"/>
 			<item value="displayHotel"/>
 			<item value="datealler"/>
 			<item value="theme"/>
-			<item value="themes"/>
-			<item value="hotelDetail"/>
-			<item value="show"/>
 		</list>
 		<list key="replacehistory">
+			<item value="MyTravel/WebContent/images/"/>
+			<item value="MyTravel/WebContent/images"/>
 			<item value="MyTravel"/>
 			<item value="Pays"/>
 			<item value="listPays"/>

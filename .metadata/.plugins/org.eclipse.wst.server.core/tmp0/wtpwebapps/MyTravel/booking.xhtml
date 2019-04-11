@@ -94,7 +94,7 @@ legend {
 
 					<h:form id="hotelForm">
 						<p:dataGrid var="hotel" value="#{beanHotel.displayHotel()}"
-							columns="2" layout="grid" rows="10" id="hotels">
+							columns="2" layout="grid" rows="10" id="hotels" emptyMessage="Aucun pays n'a été selectionné pour le moment">
 
 							<f:facet id="head" name="header">
             Hotel disponible pour la destination : #{hotel.nomPays}
@@ -103,27 +103,30 @@ legend {
 							<p:panel header="#{hotel.nom}" style="text-align:center">
 								<br />
 								<img src="#{hotel.image}" width="300" height="150"/>
+								<br/>
+								<br/>
 								<h:panelGrid columns="2" layout="grid" style="width:100%">
 
 									<h:outputText value="Ville :" />
 									<h:outputText value="#{hotel.city}" />
 
-									<h:outputText value="Prix" />
-									<h:outputText value="#{hotel.price}" />
-
-									<h:outputText value="Piscine :" />
-									<h:outputText value="#{hotel.pool}" />
-
-									<h:outputText value="Animaux :" />
-									<h:outputText value="#{hotel.animal}" />
-
-									<h:outputText value="Wifi :" />
-									<h:outputText value="#{hotel.wifi}" />
+									
 
 									<h:outputText value="Prix :" />
 									<h:outputText value="#{hotel.price} €/nuit" />
 
+
 								</h:panelGrid>
+					
+						<br />
+									<img src="#{hotel.logoPool}"  width="30" height="25"/>
+
+								
+									<img src="#{hotel.logoAnimal}" width="30" height="25"/>
+									
+								
+									<img src="#{hotel.logoWifi}" width="30" height="25" />
+								<br />
 								<br />
 								<p:linkButton outcome="dates" value="Choisir cet hotel !" actionListener="beanHotel.activated()">
 								</p:linkButton>

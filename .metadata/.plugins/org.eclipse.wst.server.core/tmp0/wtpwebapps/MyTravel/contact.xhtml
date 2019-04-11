@@ -24,41 +24,34 @@
 
 				<h:form id="contact">
 					<h:messages style="color:red" />
-					<h:panelGrid columns="2" style="margin-left:22%">
+					<h:panelGrid columns="2" style="margin-left:19%">
 						<h:outputText value="Nom :" />
-						<h:inputText id="nom" value="Antoine">
+						<h:inputText id="Nom" value="#{userBean.userName}">
 							<f:validateLength minimum="2" maximum="20" />
 						</h:inputText>
 
 						<h:outputText value="Prenom :" />
-						<h:inputText id="prenom" value="Eric" required="true">
+						<h:inputText id="Prenom" value="#{userBean.userLastName}" >
 							<f:validateLength minimum="2" maximum="20" />
 						</h:inputText>
 
 
 
-						<h:outputText value="E-mail :" />
-						<h:inputText id="email" value="#{userBean.email}" required="true">
+						<h:outputText value="(*) E-mail :" />
+						<h:inputText id="Email" value="#{userBean.email}" required="true">
 							<f:validator validatorId="MyValidatorBean" />
 						</h:inputText>
 
 						<h:outputText value="" />
 						<h:outputText value="" />
 
-						<h:outputText value="Votre message :" />
-						<p:inputTextarea id="message" rows="6" cols="33" />
+						<h:outputText value="(*) Votre message :" />
+						<p:inputTextarea id="message" rows="6" cols="33" required="true"/>
 					</h:panelGrid>
 					<br />
-					<p:commandButton value="Envoyer" oncomplete="PF('valid').show()" />
+					<h:commandButton value="Envoyer"  action="result"/>
 
-					<p:dialog id="dlg" header="Message envoyé" widgetVar="valid"
-						minHeight="40" dynamic="true">
-						<h:outputText text-align="center"
-							value="Merci pour votre message," />
-						<br />
-						<h:outputText text-align="center"
-							value="nous nous efforçons d'y répondre dans les plus brefs délais" />
-					</p:dialog>
+					
 
 				</h:form>
 			</div>

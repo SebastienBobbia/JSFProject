@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<style>
+.ui-widget-content {
+	border: none
+}
+</style>
+<body>
+	<ui:composition>
+		<div
+			style="text-shadow: 1px 5px 4px #778899, 0px 0px 2px #FFEFD5, 0px 0px 0px #000080; text-align: center; width: 100%; font-size: 45px; line-height: 48px; color: #754848; font-variant: small-caps; font-family: didot;">
+			Super Agence de voyages</div>
+
+
+		<h:form>
+			<p:megaMenu
+				style=" box-shadow: 2px 2px 2px black;margin-top:20px;background: #97c1c6 -webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0.8)),to(rgba(255,255,255,0)))">
+
+				<p:menuitem
+					style="font-size:30px; text-shadow:0px 0px 0px #FFEFD5, 0px 2px 2px #696969;margin-left:650px; "
+					value="Accueil" url="index.xhtml" />
+
+				<p:menuitem
+					style="font-size:30px;text-shadow: 0px 0px 0px #FFEFD5,0px 2px 2px #696969"
+					value="Réserver" url="booking.xhtml" />
+				<p:menuitem
+					style="font-size:30px;text-shadow: 0px 0px 0px #FFEFD5,0px 2px 2px #696969"
+					value="Qui sommes-nous" url="infos.xhtml" />
+				<p:menuitem
+					style="font-size:30px;text-shadow: 0px 0px 0px #FFEFD5,0px 2px 2px #696969"
+					value="Contact" url="contact.xhtml" />
+
+			</p:megaMenu>
+		</h:form>
+
+	</ui:composition>
+</body>
+</html>
